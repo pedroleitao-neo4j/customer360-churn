@@ -1,4 +1,4 @@
-# Customer 360 Churn with Neo4j in a Telco and Subscriber Context
+# Subscriber & Network Analytics with Neo4j and Graph Data Science
 
 <p align="center">
   <img src="renderings/similarity_network.png" alt="Similarity Network"/>
