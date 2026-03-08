@@ -28,6 +28,12 @@ The architecture is intentionally simple to operate. Neo4j is the system of reco
 
 The application expects environment configuration in a local `.env` file. The required Neo4j settings are `NEO4J_URI`, `NEO4J_USER`, `NEO4J_PASSWORD`, and `NEO4J_DATABASE`. The data ingestion notebook also expects `DOWNLOAD_PATH` for the Kaggle download destination. The agent section in the app is optional and only works when Aura API credentials are provided through `AURA_API_CLIENT_ID`, `AURA_API_CLIENT_SECRET`, and `AURA_API_TEXT2CYPHER_ENDPOINT`.
 
+<p align="center">
+  <img src="renderings/community_risk_landscape.png" alt="At-Risk Communities with Louvain"/>
+  <br>
+  <sub>At-risk communities with Louvain</sub>
+</p>
+
 To run the solution end to end on macOS, create the Conda environment from `environment.yml`, activate it, configure `.env`, run the notebooks in sequence, and then launch Streamlit. Running notebooks in order matters because the app depends on relationships and properties created during preprocessing, especially embeddings, macro reasons, and nearest-neighbor edges.
 
 ```bash
