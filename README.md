@@ -6,9 +6,9 @@
   <sub>Tightly connected groups of similar customers</sub>
 </p>
 
-This project is a business analytics application for telecom churn that combines Neo4j, Graph Data Science, and [Streamlit](https://streamlit.io/). It turns customer records into a connected Customer 360 graph and uses that structure to explain risk, not just score it. The result is an interactive experience where teams can move from broad KPIs to customer neighborhoods, community risk, geographic patterns, and recommendation-style signals.
+This project is a business analytics use case for telecom and subscriber services churn that combines Neo4j, Graph Data Science, and [Streamlit](https://streamlit.io/). It turns customer records into a connected Customer 360 graph and uses that structure to explain risk, not just score it. The result is an interactive experience where teams can move from broad KPIs to customer neighborhoods, community risk, geographic patterns, and recommendation-style signals.
 
-From a business perspective, the goal is better retention decisions with less guesswork. Churn is usually analyzed in flat tables, but many churn drivers are relational, such as shared service bundles, similar customer profiles, and local infrastructure patterns. This graph-first approach helps teams identify where risk concentrates, why it is likely happening, and which active customers look most exposed. It supports practical workflows such as prioritizing outreach, designing segment-specific offers, and communicating risk rationale to non-technical stakeholders.
+From a business perspective, the goal is better retention decisions with less guesswork. Churn is usually analyzed in flat tables, but many churn drivers are relational, such as shared service bundles, similar customer profiles, and local infrastructure patterns. Our graph-first approach helps teams identify where risk concentrates, why it is likely happening, and which active customers look most exposed. It supports practical workflows such as prioritizing outreach, designing segment-specific offers, and communicating risk rationale to non-technical stakeholders.
 
 <p align="center">
   <img src="renderings/schema_graph.png" alt="Graph Schema"/>
@@ -34,7 +34,7 @@ The application expects environment configuration in a local `.env` file. The re
   <sub>At-risk communities with Louvain</sub>
 </p>
 
-To run the solution end to end on macOS, create the Conda environment from `environment.yml`, activate it, configure `.env`, run the notebooks in sequence, and then launch Streamlit. Running notebooks in order matters because the app depends on relationships and properties created during preprocessing, especially embeddings, macro reasons, and nearest-neighbor edges.
+To run the solution end to end, create the Conda environment from `environment.yml`, activate it, configure `.env`, run the notebooks in sequence, and then launch Streamlit. Running notebooks in order matters because the app depends on relationships and properties created during preprocessing, especially embeddings, macro reasons, and nearest-neighbor edges.
 
 ```bash
 conda env create -f environment.yml
@@ -60,4 +60,4 @@ After environment setup, execute `loader.ipynb`, then `enrich.ipynb`, then `anal
 streamlit run app.py
 ```
 
-If sections in the UI appear empty, the most common cause is partial preprocessing in the target database. Re-running the notebook sequence in order usually resolves it.
+>If sections in the UI appear empty, the most common cause is partial preprocessing in the target database. Re-running the notebook sequence in order usually resolves it.
